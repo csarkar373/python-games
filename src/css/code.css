@@ -1,0 +1,13 @@
+.codelines {
+  display: inline-block;
+  text-align: left;
+  white-space: pre; /* preserve the indenting */
+  border: 1px solid;
+  margin: 5px;
+  padding: 10px;
+  color: black;
+}
+
+.centered {
+  text-align: center;
+}

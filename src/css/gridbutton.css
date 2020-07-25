@@ -1,0 +1,8 @@
+.gb:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.gb {
+  margin: 0.4em;
+}
