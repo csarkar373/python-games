@@ -1,4 +1,4 @@
-import { ArrayQuestionFactory } from "../arraycomponents/arrayquestionfactory";
+import { ListQuestionFactory } from "../listcomponents/listquestionfactory";
 import { BooleanQuestionFactory } from "../booleancomponents/booleanquestionfactory";
 import { RelationalQuestionFactory } from "../relationalcomponents/relationalquestionfactory";
 import { StringQuestionFactory } from "../stringcomponents/stringquestionfactory";
@@ -11,7 +11,7 @@ export class MixedQuestionFactory {
 
   getQuestion(props) {
     const factories = [
-      ArrayQuestionFactory,
+      ListQuestionFactory,
       BooleanQuestionFactory,
       RelationalQuestionFactory,
       StringQuestionFactory,

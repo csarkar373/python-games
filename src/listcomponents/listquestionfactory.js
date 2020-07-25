@@ -1,11 +1,11 @@
-import * as ArrayConstants from "./arrayconstants";
-import arrayQuestion1 from "./arrayquestion1";
-import arrayQuestion1r from "./arrayquestion1r";
-import arrayQuestion1b from "./arrayquestion1b";
-import arrayQuestion2 from "./arrayquestion2";
-import arrayQuestion2r from "./arrayquestion2r";
+import * as ListConstants from "./listconstants";
+import listQuestion1 from "./listquestion1";
+import listQuestion1r from "./listquestion1r";
+import listQuestion1b from "./listquestion1b";
+import listQuestion2 from "./listquestion2";
+import listQuestion2r from "./listquestion2r";
 
-export class ArrayQuestionFactory {
+export class ListQuestionFactory {
   constructor(options) {
     if (options) {
       this.options = [...options];
@@ -14,11 +14,11 @@ export class ArrayQuestionFactory {
       this.twod = false;
       for (let option of options) {
         // console.log("for option:", option.id, option.checked);
-        if (option.id === ArrayConstants.LOOPSOPTIONID) {
+        if (option.id === ListConstants.LOOPSOPTIONID) {
           this.loops = option.checked;
           // console.log("changing loops option to ", this.loops);
         }
-        if (option.id === ArrayConstants.TWODOPTIONID) {
+        if (option.id === ListConstants.TWODOPTIONID) {
           this.twod = option.checked;
           // console.log("changing 2D option to ", this.twod);
         }
@@ -35,35 +35,35 @@ export class ArrayQuestionFactory {
 
     //console.log("getQuestion loops 2D", this.loops, this.twod);
 
-    let questionTypes = [arrayQuestion1];
+    let questionTypes = [listQuestion1];
 
     // add loops?
     if (this.loops) {
-      questionTypes.push(arrayQuestion1r);
-      questionTypes.push(arrayQuestion1b);
+      questionTypes.push(listQuestion1r);
+      questionTypes.push(listQuestion1b);
     }
 
     // add 2D?
     if (this.twod) {
-      questionTypes.push(arrayQuestion2);
-      questionTypes.push(arrayQuestion2);
+      questionTypes.push(listQuestion2);
+      questionTypes.push(listQuestion2);
     }
 
     // add 2D with loops?
     if (this.loops && this.twod) {
-      questionTypes.push(arrayQuestion2r);
-      questionTypes.push(arrayQuestion2r);
-      questionTypes.push(arrayQuestion2r);
-      questionTypes.push(arrayQuestion2r);
+      questionTypes.push(listQuestion2r);
+      questionTypes.push(listQuestion2r);
+      questionTypes.push(listQuestion2r);
+      questionTypes.push(listQuestion2r);
     }
 
     const random = Math.floor(Math.random() * questionTypes.length);
     const question = new questionTypes[random](props);
     //console.log("creating question in factory", question);
-    //const question = new arrayQuestion1(props);
-    //const question = new arrayQuestion1b(props);
-    //const question = new arrayQuestion2();
-    //const question = new arrayQuestion2r();
+    //const question = new listQuestion1(props);
+    //const question = new listQuestion1b(props);
+    //const question = new listQuestion2();
+    //const question = new listQuestion2r();
     //console.log("getQuestion", question);
     return question;
   }
