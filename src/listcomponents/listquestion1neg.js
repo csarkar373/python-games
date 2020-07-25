@@ -12,22 +12,8 @@ function arrayQuestion1b(props) {
   const equalsChar =
     Math.random() > 0.5 || upperBound === lowerBound ? "=" : "";
 
-  aq.text = [
-    "for(int i=" +
-      upperBound +
-      "; i >" +
-      equalsChar +
-      " " +
-      lowerBound +
-      "; i-=" +
-      decrement +
-      ") {",
-    "   System.out.print( a[i] );",
-    "}",
-  ];
-  if (equalsChar === "=") {
-    --lowerBound;
-  }
+  aq.text = ["still under construction", "print( a[i] );"];
+
   for (let i = upperBound; i > lowerBound; i -= decrement) {
     aq.buttonStates[0][i] = 1;
   }

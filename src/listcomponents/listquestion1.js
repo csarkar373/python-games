@@ -9,7 +9,7 @@ function arrayQuestion1(props) {
   // question1 will have 1 row and 8 columns
   const index = Math.floor(Math.random() * aq.buttonStates[0].length);
   aq.buttonStates[0][index] = 1;
-  aq.text = [`System.out.print( a[${index}] );`];
+  aq.text = [`print( a[${index}] );`];
   //console.log("array question1 created aq = ", aq);
   return aq;
 }
