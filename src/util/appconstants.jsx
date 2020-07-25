@@ -1,4 +1,4 @@
-export const APPTITLE = "Python Games Beta 0.1";
+export const APPTITLE = "Python Games Beta 0.2";
 
 export const SOUNDOPTIONID = 1;
 export const TIMEROPTIONID = 2;
