@@ -1,55 +1,57 @@
 import * as StringConstants from "./stringconstants";
-import StringQuestion1 from "./stringquestion1";
-import StringQuestion1r from "./stringquestion1r";
-import StringQuestion1s from "./stringquestion1s";
-import StringQuestion1loop from "./stringquestion1loop";
+import StringQuestionCN from "./stringquestioncn";
+import StringQuestionNCN from "./stringquestionncn";
+import StringQuestionNC from "./stringquestionnc";
+import StringQuestionNegN from "./stringnegn";
+import StringQuestionNegPCN from "./stringnegpcn";
 
 export class StringQuestionFactory {
   constructor(options) {
     if (options) {
       this.options = [...options];
       // console.log("qf constructor", this.options);
-      this.loops = false;
+      this.negatives = false;
       for (let option of options) {
         // console.log("for option:", option.id, option.checked);
-        if (option.id === StringConstants.LOOPSOPTIONID) {
-          this.loops = option.checked;
-          // console.log("changing loops option to ", this.loops);
+        if (option.id === StringConstants.NEGATIVESOPTIONID) {
+          this.negatives = option.checked;
+          // console.log("changing negatives option to ", this.negatives);
         }
       }
     } else {
       // mixed game
-      this.loops = true;
+      this.negatives = true;
     }
   }
 
   getQuestion(props) {
-    //console.log("getQuestion loops 2D", this.loops, this.twod);
+    //console.log("getQuestion negatives 2D", this.negatives, this.twod);
 
     let questionTypes = [
-      StringQuestion1,
-      StringQuestion1s,
-      StringQuestion1r,
-      StringQuestion1r,
-      StringQuestion1r,
+      StringQuestionCN,
+      StringQuestionNC,
+      StringQuestionNCN,
+      StringQuestionNCN,
+      StringQuestionNCN,
     ];
 
-    // add loops?
-    if (this.loops) {
-      questionTypes.push(StringQuestion1loop);
-      questionTypes.push(StringQuestion1loop);
-      questionTypes.push(StringQuestion1loop);
-      questionTypes.push(StringQuestion1loop);
-      questionTypes.push(StringQuestion1loop);
+    // add negatives?
+    if (this.negatives) {
+      questionTypes.push(StringQuestionNegN);
+      questionTypes.push(StringQuestionNegPCN);
+      // questionTypes.push(StringQuestionNeg);
+      // questionTypes.push(StringQuestionNeg);
+      // questionTypes.push(StringQuestionNeg);
     }
 
     const random = Math.floor(Math.random() * questionTypes.length);
 
-    const question = new questionTypes[random](props);
+    //const question = new questionTypes[random](props);
     //const question = new StringQuestion1(props);
-    //const question = new StringQuestion1r(props);
-    //const question = new StringQuestion1s(props);
-    //const question = new StringQuestion1loop(props);
+    //const question = new StringQuestionNCN(props);
+    //const question = new StringQuestionNC(props);
+    //const question = new StringQuestionNegN(props);
+    const question = new StringQuestionNegPCN(props);
     //console.log("getQuestion", question);
     return question;
   }

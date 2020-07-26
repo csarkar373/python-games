@@ -2,7 +2,7 @@ import * as ListConstants from "./listconstants";
 import listQuestion1 from "./listquestion1";
 import listQuestionNCN from "./listncn";
 import listQuestionNC from "./listnc";
-import listQuestion1neg from "./listquestion1neg";
+//import listQuestion1neg from "./listquestion1neg";
 import listQuestion2 from "./listquestion2";
 import listQuestion2r from "./listquestion2r";
 
@@ -48,7 +48,7 @@ export class ListQuestionFactory {
     if (this.loops) {
       questionTypes.push(listQuestionNCN);
       questionTypes.push(listQuestionNC);
-      questionTypes.push(listQuestion1b);
+      //questionTypes.push(listQuestion1b);
     }
 
     // add 2D?

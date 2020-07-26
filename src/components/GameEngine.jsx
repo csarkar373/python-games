@@ -148,7 +148,6 @@ class GameEngine extends Component {
       <div className="gameEngine">
         <h4>{this.props.title}</h4>
         <div>
-          {/*  global options (for all games) */}
           <Options options={GLOBALOPTIONS} onChange={this.handleOptions} />
           {/* options specific to the current game */}
           <Options

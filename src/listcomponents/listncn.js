@@ -10,7 +10,7 @@ function listQuestionNCN(props) {
   const increment = aq.randomIncrementOrDecrement();
   const lowerBound = Math.floor(Math.random() * 4);
   let upperBound = Math.floor(Math.random() * (8 - lowerBound)) + lowerBound;
-  aq.text = ["print( " + lowerBound + ":" + upperBound + ") "];
+  aq.text = ["print( a[ " + lowerBound + ":" + upperBound + " ]) "];
   for (let i = lowerBound; i < upperBound; i += increment) {
     aq.buttonStates[0][i] = 1;
   }

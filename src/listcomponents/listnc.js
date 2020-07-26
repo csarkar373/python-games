@@ -18,4 +18,4 @@ function listQuestionNC(props) {
   return aq;
 }
 
-export default listQuestionNCN;
+export default listQuestionNC;

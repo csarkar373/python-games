@@ -4,7 +4,7 @@ import * as StringConstants from "./stringconstants";
 import { StringQuestionFactory } from "./stringquestionfactory";
 
 const STRINGOPTIONS = [
-  { id: StringConstants.LOOPSOPTIONID, label: "Loops", checked: false },
+  { id: StringConstants.NEGATIVESOPTIONID, label: "Negatives", checked: false },
 ];
 
 class StringGameEngine extends Component {
@@ -30,7 +30,7 @@ class StringGameEngine extends Component {
         this.setState({ labels, options });
         return;
       default:
-        console.log("unknown option in string game engine");
+        console.log("other option in string game engine");
         break;
     }
     this.setState({ options });
@@ -50,7 +50,7 @@ class StringGameEngine extends Component {
           maxtime={this.state.maxtime}
           addtime={this.state.addtime}
         />
-        <h6>Select all the letters that are part of the substring.</h6>
+        <h6>Select all the letters that are printed.</h6>
       </div>
     );
   }

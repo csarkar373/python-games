@@ -1,7 +1,7 @@
 import QuestionBaseClass from "../components/questionbaseclass";
 //import * as StringConstants from "./stringconstants";
 
-function stringQuestion1loop(props) {
+function stringQuestionNeg3(props) {
   //pick a word from the word pool at random
   //const wordIndex = StringConstants.WORDPOOL.length;
   // const currentWord =
@@ -20,16 +20,12 @@ function stringQuestion1loop(props) {
   const lowerBound = Math.floor((Math.random() * currentWord.length) / 2);
   let upperBound =
     Math.floor(Math.random() * (currentWord.length - lowerBound)) + lowerBound;
-  const equalsChar =
-    Math.random() > 0.5 || upperBound === lowerBound ? "=" : "";
   sq.text = [
     'String word = "' + currentWord + '";',
     'Strings s = "";',
     "for(int i=" +
       lowerBound +
       "; i <" +
-      equalsChar +
-      " " +
       upperBound +
       "; i+=" +
       increment +
@@ -37,13 +33,11 @@ function stringQuestion1loop(props) {
     "   s += word.substring(i, i+1); ",
     "}",
   ];
-  if (equalsChar === "=") {
-    ++upperBound;
-  }
+
   for (let i = lowerBound; i < upperBound; i += increment) {
     sq.buttonStates[0][i] = 1;
   }
   return sq;
 }
 
-export default stringQuestion1loop;
+export default stringQuestionNeg3;

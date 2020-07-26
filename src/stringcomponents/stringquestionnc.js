@@ -1,7 +1,7 @@
 import QuestionBaseClass from "../components/questionbaseclass";
 import * as StringConstants from "./stringconstants";
 
-function stringQuestion1s(props) {
+function stringQuestionNC(props) {
   //pick a word from the word pool at random
   const wordIndex = StringConstants.WORDPOOL.length;
   const currentWord =
@@ -21,8 +21,8 @@ function stringQuestion1s(props) {
     sq.buttonStates[0][i] = 1;
   }
 
-  sq.text = [`"${currentWord}".substring(${lowerBound});`];
+  sq.text = [` string = ${currentWord} `, `print(string[ ${lowerBound}: ])`];
   return sq;
 }
 
-export default stringQuestion1s;
+export default stringQuestionNC;

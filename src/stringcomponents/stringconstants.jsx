@@ -22,4 +22,4 @@ export const ADDTIME = 2; // bonus for paritally correct answers
 export const DEFAULTLABELSOPTION = true;
 
 export const LABELSOPTIONID = 2;
-export const LOOPSOPTIONID = 3;
+export const NEGATIVESOPTIONID = 3;
