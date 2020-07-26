@@ -1,7 +1,6 @@
 import * as LoopConstants from "./loopconstants";
 import loopQuestion1 from "./loopquestion1";
 import loopQuestion2 from "./loopquestion2";
-import loopQuestionNeg from "./loopquestionneg";
 import loopQuestionNested from "./loopquestionnested";
 import loopQuestionWhile from "./loopquestionwhile";
 
@@ -15,10 +14,6 @@ export class LoopQuestionFactory {
       this.nested = false;
       for (let option of options) {
         // console.log("for option:", option.id, option.checked);
-        if (option.id === LoopConstants.NEGATIVESOPTIONID) {
-          this.negatives = option.checked;
-          // console.log("changing negatives option to ", this.negatives);
-        }
         if (option.id === LoopConstants.WHILEOPTIONID) {
           this.while = option.checked;
           // console.log("changing do while option to ", this.nested);
@@ -50,13 +45,6 @@ export class LoopQuestionFactory {
       questionTypes.push(loopQuestionWhile);
     }
 
-    // add negatives?
-    if (this.negatives) {
-      questionTypes.push(loopQuestionNeg);
-      questionTypes.push(loopQuestionNeg);
-      questionTypes.push(loopQuestionNeg);
-    }
-
     // add nested
     if (this.nested) {
       questionTypes.push(loopQuestionNested);
@@ -65,13 +53,12 @@ export class LoopQuestionFactory {
       questionTypes.push(loopQuestionNested);
     }
 
-    //const random = Math.floor(Math.random() * questionTypes.length);
+    const random = Math.floor(Math.random() * questionTypes.length);
     //const question = new questionTypes[random](props);
     //console.log("creating question in factory", question);
-    //const question = new loopQuestion1(props);
-    //const question = new loopQuestion1b(props);
+    const question = new loopQuestion1(props);
     //const question = new loopQuestionNested(props);
-    const question = new loopQuestionWhile(props);
+    //const question = new loopQuestionWhile(props);
     //console.log("getQuestion", question);
     return question;
   }

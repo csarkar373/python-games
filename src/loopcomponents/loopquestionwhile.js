@@ -9,7 +9,10 @@ function loopQuestionWhile(props) {
   // increment is 1,2 or 3
   const lowerBound = Math.floor(Math.random() * 4);
   let upperBound = Math.floor(Math.random() * (8 - lowerBound)) + lowerBound;
-  const equalsChar = Math.random() > 0.5 ? "=" : "";
+  // bug fix 7/26/20 must limit loop length to no more than 7
+  // so added lowerBound > 0
+  const equalsChar = Math.random() > 0.5 && lowerBound > 0 ? "=" : "";
+
   lq.text = [
     "i = " + lowerBound,
     "while  i <" + equalsChar + " " + upperBound + ":",

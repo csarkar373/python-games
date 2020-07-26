@@ -46,7 +46,7 @@ class ScoreKeeper extends Component {
           autoFocus
           ref={this.myButtonRef}
           onClick={this.handleClick}
-          className="btn btn-outline-primary btn-lg m-2"
+          className="btn btn-danger btn-lg m-2"
         >
           Score = {this.state.score}
         </button>

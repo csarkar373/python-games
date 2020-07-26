@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <div className="Outer">
         <div className="App">
-          <nav className="navbar navbar-nav navbar-dark bg-primary m-1">
+          <nav className="navbar navbar-nav navbar-dark bg-danger m-1">
             <h2>
               <i>{AppConstants.APPTITLE}</i>
             </h2>
@@ -44,21 +44,21 @@ class App extends React.Component {
               <button
                 onClick={this.handleButton}
                 id={AppConstants.STRINGGAMEINDEX}
-                className="btn btn-sm btn-primary m-1"
+                className="btn btn-sm btn-danger m-1"
               >
                 Strings
               </button>
               <button
                 onClick={this.handleButton}
                 id={AppConstants.RELATIONALGAMEINDEX}
-                className="btn btn-sm btn-primary m-1"
+                className="btn btn-sm btn-danger m-1"
               >
                 Relational
               </button>
               <button
                 onClick={this.handleButton}
                 id={AppConstants.BOOLEANGAMEINDEX}
-                className="btn btn-sm btn-primary m-1"
+                className="btn btn-sm btn-danger m-1"
               >
                 Boolean
               </button>
@@ -66,21 +66,21 @@ class App extends React.Component {
                 autoFocus
                 onClick={this.handleButton}
                 id={AppConstants.LOOPGAMEINDEX}
-                className="btn btn-sm btn-primary m-1"
+                className="btn btn-sm btn-danger m-1"
               >
                 Loops
               </button>
               <button
                 id={AppConstants.LISTGAMEINDEX}
                 onClick={this.handleButton}
-                className="btn btn-sm btn-primary m-1"
+                className="btn btn-sm btn-danger m-1"
               >
                 Lists
               </button>
               <button
                 onClick={this.handleButton}
                 id={AppConstants.MIXEDGAMEINDEX}
-                className="btn btn-sm btn-primary m-1"
+                className="btn btn-sm btn-danger m-1"
               >
                 Mixed
               </button>
@@ -89,7 +89,7 @@ class App extends React.Component {
 
           {this.state.currentGame}
 
-          <footer className="page-footer font-small blue pt-4">
+          <footer className="page-footer font-small blue m-2 pt-4">
             <div className="footer-copyright text-center py-3">
               {AppConstants.DISCLAIMER}
               <a href="https://sites.google.com/view/codinggames/home">

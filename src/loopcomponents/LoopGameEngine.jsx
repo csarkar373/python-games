@@ -10,11 +10,6 @@ const LOOPOPTIONS = [
     checked: LoopConstants.DEFAULTWHILEOPTION,
   },
   {
-    id: LoopConstants.NEGATIVESOPTIONID,
-    label: "Negatives",
-    checked: LoopConstants.DEFAULTNEGATIVESOPTION,
-  },
-  {
     id: LoopConstants.NESTEDOPTIONID,
     label: "Nested",
     checked: LoopConstants.DEFAULTNESTEDOPTION,
