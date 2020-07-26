@@ -1,25 +1,26 @@
 import * as LoopConstants from "./loopconstants";
 import loopQuestion1 from "./loopquestion1";
-import loopQuestion1b from "./loopquestion1b";
+import loopQuestion2 from "./loopquestion2";
+import loopQuestionNeg from "./loopquestionneg";
 import loopQuestionNested from "./loopquestionnested";
-import loopQuestionDo from "./loopquestiondo";
+import loopQuestionWhile from "./loopquestionwhile";
 
 export class LoopQuestionFactory {
   constructor(options) {
     if (options) {
       this.options = [...options];
       // console.log("qf constructor", this.options);
-      this.backwards = false;
-      this.do = false;
+      this.negatives = false;
+      this.while = false;
       this.nested = false;
       for (let option of options) {
         // console.log("for option:", option.id, option.checked);
-        if (option.id === LoopConstants.BACKWARDSOPTIONID) {
-          this.backwards = option.checked;
-          // console.log("changing backwards option to ", this.backwards);
+        if (option.id === LoopConstants.NEGATIVESOPTIONID) {
+          this.negatives = option.checked;
+          // console.log("changing negatives option to ", this.negatives);
         }
-        if (option.id === LoopConstants.DOOPTIONID) {
-          this.do = option.checked;
+        if (option.id === LoopConstants.WHILEOPTIONID) {
+          this.while = option.checked;
           // console.log("changing do while option to ", this.nested);
         }
         if (option.id === LoopConstants.NESTEDOPTIONID) {
@@ -29,8 +30,8 @@ export class LoopQuestionFactory {
       }
     } else {
       // mixed game
-      this.backwards = true;
-      this.do = true;
+      this.negatives = true;
+      this.while = true;
       this.nested = true;
     }
   }
@@ -38,20 +39,22 @@ export class LoopQuestionFactory {
   getQuestion(props) {
     //console.log("getquestion props", props);
 
-    //console.log("getQuestion backwards nested", this.backwards, this.nested);
+    //console.log("getQuestion negatives nested", this.negatives, this.nested);
 
-    let questionTypes = [loopQuestion1];
-
-    // add backwards?
-    if (this.backwards) {
-      questionTypes.push(loopQuestion1b);
-      questionTypes.push(loopQuestion1b);
-    }
+    let questionTypes = [loopQuestion1, loopQuestion2];
 
     // add do while?
-    if (this.do) {
-      questionTypes.push(loopQuestionDo);
-      questionTypes.push(loopQuestionDo);
+    if (this.while) {
+      questionTypes.push(loopQuestionWhile);
+      questionTypes.push(loopQuestionWhile);
+      questionTypes.push(loopQuestionWhile);
+    }
+
+    // add negatives?
+    if (this.negatives) {
+      questionTypes.push(loopQuestionNeg);
+      questionTypes.push(loopQuestionNeg);
+      questionTypes.push(loopQuestionNeg);
     }
 
     // add nested
@@ -62,13 +65,13 @@ export class LoopQuestionFactory {
       questionTypes.push(loopQuestionNested);
     }
 
-    const random = Math.floor(Math.random() * questionTypes.length);
-    const question = new questionTypes[random](props);
+    //const random = Math.floor(Math.random() * questionTypes.length);
+    //const question = new questionTypes[random](props);
     //console.log("creating question in factory", question);
     //const question = new loopQuestion1(props);
     //const question = new loopQuestion1b(props);
     //const question = new loopQuestionNested(props);
-    // const question = new loopQuestionDo(props);
+    const question = new loopQuestionWhile(props);
     //console.log("getQuestion", question);
     return question;
   }

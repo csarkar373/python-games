@@ -42,7 +42,10 @@ export class StringQuestionFactory {
       questionTypes.push(StringQuestionNegN);
       questionTypes.push(StringQuestionNegN);
       questionTypes.push(StringQuestionNegPCN);
+      questionTypes.push(StringQuestionNegPCN);
       questionTypes.push(StringQuestionNegNC);
+      questionTypes.push(StringQuestionNegNC);
+      questionTypes.push(StringQuestionNegNCN);
       questionTypes.push(StringQuestionNegNCN);
       questionTypes.push(StringQuestionNegNCN);
       questionTypes.push(StringQuestionNegNCN);

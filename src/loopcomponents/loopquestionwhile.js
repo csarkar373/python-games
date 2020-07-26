@@ -1,6 +1,6 @@
 import QuestionBaseClass from "../components/questionbaseclass";
 
-function loopQuestionDo(props) {
+function loopQuestionWhile(props) {
   // question will have 1 row and 8 columns
   const lq = new QuestionBaseClass(props, 1, 8);
   console.log("loop question base class", lq);
@@ -11,22 +11,23 @@ function loopQuestionDo(props) {
   let upperBound = Math.floor(Math.random() * (8 - lowerBound)) + lowerBound;
   const equalsChar = Math.random() > 0.5 ? "=" : "";
   lq.text = [
-    "int i=" + lowerBound + ";",
-    "do {",
-    '   System.out.println("Hello!");',
-    "} while (++i <" + equalsChar + " " + upperBound + ");",
+    "i = " + lowerBound,
+    "while  i <" + equalsChar + " " + upperBound + ":",
+    '   print("Hello!")',
+    "   i += 1",
   ];
   if (equalsChar === "=") {
     ++upperBound;
   }
   let index = lowerBound;
   let counter = 0;
-  do {
-    ++counter;
+  while (index < upperBound) {
     console.log("counter = ", counter);
-  } while (++index < upperBound);
+    ++counter;
+    ++index;
+  }
   lq.buttonStates[0][counter] = 1;
   return lq;
 }
 
-export default loopQuestionDo;
+export default loopQuestionWhile;

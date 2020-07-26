@@ -5,14 +5,14 @@ import * as LoopConstants from "./loopconstants";
 
 const LOOPOPTIONS = [
   {
-    id: LoopConstants.BACKWARDSOPTIONID,
-    label: "Backwards",
-    checked: LoopConstants.DEFAULTBACKWARDSSOPTION,
+    id: LoopConstants.WHILEOPTIONID,
+    label: "While",
+    checked: LoopConstants.DEFAULTWHILEOPTION,
   },
   {
-    id: LoopConstants.DOOPTIONID,
-    label: "Do While",
-    checked: LoopConstants.DEFAULTDOOPTION,
+    id: LoopConstants.NEGATIVESOPTIONID,
+    label: "Negatives",
+    checked: LoopConstants.DEFAULTNEGATIVESOPTION,
   },
   {
     id: LoopConstants.NESTEDOPTIONID,
