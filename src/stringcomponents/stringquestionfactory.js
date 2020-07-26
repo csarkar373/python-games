@@ -4,6 +4,8 @@ import StringQuestionNCN from "./stringquestionncn";
 import StringQuestionNC from "./stringquestionnc";
 import StringQuestionNegN from "./stringnegn";
 import StringQuestionNegPCN from "./stringnegpcn";
+import StringQuestionNegNCN from "./stringnegncn";
+import StringQuestionNegNC from "./stringnegnc";
 
 export class StringQuestionFactory {
   constructor(options) {
@@ -38,20 +40,24 @@ export class StringQuestionFactory {
     // add negatives?
     if (this.negatives) {
       questionTypes.push(StringQuestionNegN);
+      questionTypes.push(StringQuestionNegN);
       questionTypes.push(StringQuestionNegPCN);
-      // questionTypes.push(StringQuestionNeg);
-      // questionTypes.push(StringQuestionNeg);
-      // questionTypes.push(StringQuestionNeg);
+      questionTypes.push(StringQuestionNegNC);
+      questionTypes.push(StringQuestionNegNCN);
+      questionTypes.push(StringQuestionNegNCN);
+      questionTypes.push(StringQuestionNegNCN);
     }
 
     const random = Math.floor(Math.random() * questionTypes.length);
+    const question = new questionTypes[random](props);
 
-    //const question = new questionTypes[random](props);
     //const question = new StringQuestion1(props);
     //const question = new StringQuestionNCN(props);
     //const question = new StringQuestionNC(props);
     //const question = new StringQuestionNegN(props);
-    const question = new StringQuestionNegPCN(props);
+    //const question = new StringQuestionNegPCN(props);
+    //const question = new StringQuestionNegNCN(props);
+    //const question = new StringQuestionNegNC(props);
     //console.log("getQuestion", question);
     return question;
   }
