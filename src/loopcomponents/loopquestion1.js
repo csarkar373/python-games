@@ -8,17 +8,18 @@ function loopQuestion1(props) {
   lq.rows = 1;
   // increment is 1,2 or 3
   const increment = 1;
+  const lowerBound = Math.floor(Math.random() * 4);
   let upperBound = Math.floor(Math.random() * (8 - lowerBound)) + lowerBound;
-  const lowerBound = Math.floor(Math.random() * upperBound);
+
   lq.text = [
     "for x in range(" + lowerBound + ", " + upperBound + "):",
     '   print("Hello!")',
   ];
-  let index = 0;
+  let count = 0;
   for (let i = lowerBound; i < upperBound; i += increment) {
-    ++index;
+    ++count;
   }
-  lq.buttonStates[0][index] = 1;
+  lq.buttonStates[0][count] = 1;
   return lq;
 }
 

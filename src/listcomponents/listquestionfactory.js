@@ -4,7 +4,6 @@ import listQuestionNCN from "./listncn";
 import listQuestionNC from "./listnc";
 //import listQuestion1neg from "./listquestion1neg";
 import listQuestion2 from "./listquestion2";
-import listQuestion2r from "./listquestion2r";
 
 export class ListQuestionFactory {
   constructor(options) {
@@ -48,21 +47,14 @@ export class ListQuestionFactory {
     if (this.loops) {
       questionTypes.push(listQuestionNCN);
       questionTypes.push(listQuestionNC);
-      //questionTypes.push(listQuestion1b);
     }
 
     // add 2D?
     if (this.twod) {
       questionTypes.push(listQuestion2);
       questionTypes.push(listQuestion2);
-    }
-
-    // add 2D with loops?
-    if (this.loops && this.twod) {
-      questionTypes.push(listQuestion2r);
-      questionTypes.push(listQuestion2r);
-      questionTypes.push(listQuestion2r);
-      questionTypes.push(listQuestion2r);
+      questionTypes.push(listQuestion2);
+      questionTypes.push(listQuestion2);
     }
 
     const random = Math.floor(Math.random() * questionTypes.length);

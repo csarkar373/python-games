@@ -10,7 +10,7 @@ function arrayQuestion2(props) {
   const col = Math.floor(Math.random() * aq.buttonStates[0].length);
   aq.buttonStates[row][col] = 1;
   //this.buttonIds = [0, 1, 2, 3, 4, 5, 6, 7];
-  aq.text = [`System.out.print( c[${row}][${col}] );`];
+  aq.text = [`print( c[${row}][${col}] );`];
   return aq;
 }
 

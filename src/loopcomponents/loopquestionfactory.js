@@ -54,9 +54,10 @@ export class LoopQuestionFactory {
     }
 
     const random = Math.floor(Math.random() * questionTypes.length);
-    //const question = new questionTypes[random](props);
+    const question = new questionTypes[random](props);
     //console.log("creating question in factory", question);
-    const question = new loopQuestion1(props);
+    //const question = new loopQuestion1(props);
+    //const question = new loopQuestion2(props);
     //const question = new loopQuestionNested(props);
     //const question = new loopQuestionWhile(props);
     //console.log("getQuestion", question);

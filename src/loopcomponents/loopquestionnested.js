@@ -8,60 +8,46 @@ function loopQuestionNested(props) {
   lq.pointValue = 3;
   lq.rows = 1;
   // increment is 1 or 2
-  let index = 0;
+  let count = 0;
   do {
-    let incrementOuter = Math.random() > 0.75 ? 2 : 1;
+    let incrementOuter = lq.randomIncrementOrDecrement();
     let lowerBoundOuter = Math.floor(Math.random() * 4);
     let upperBoundOuter =
       Math.floor(Math.random() * (8 - lowerBoundOuter)) + lowerBoundOuter;
 
-    let incrementInner = Math.random() > 0.75 ? 2 : 1;
+    let incrementInner = lq.randomIncrementOrDecrement();
     let lowerBoundInner = Math.floor(Math.random() * 4);
     let upperBoundInner =
       Math.floor(Math.random() * (8 - lowerBoundInner)) + lowerBoundInner;
 
-    let equalsCharOuter = Math.random() > 0.5 ? "=" : "";
-    let equalsCharInner = Math.random() > 0.5 ? "=" : "";
     lq.text = [
-      "for(int i=" +
+      "for i in range ( " +
         lowerBoundOuter +
-        "; i <" +
-        equalsCharOuter +
-        " " +
+        ", " +
         upperBoundOuter +
-        "; i+=" +
+        ", " +
         incrementOuter +
-        ") {",
-      "   for(int j=" +
+        " ):",
+      "   for j in range (" +
         lowerBoundInner +
-        "; j <" +
-        equalsCharInner +
-        " " +
+        ", " +
         upperBoundInner +
-        "; j+=" +
+        ", " +
         incrementInner +
-        ") {",
-      '      System.out.println("Hello");',
-      "   }",
-      "}",
+        " ):",
+      '      print("Hello")',
     ];
-    if (equalsCharOuter === "=") {
-      ++upperBoundOuter;
-    }
-    if (equalsCharInner === "=") {
-      ++upperBoundInner;
-    }
 
-    index = 0; // reset to zero for every do/while iteration
+    count = 0; // reset to zero for every do/while iteration
     for (let i = lowerBoundOuter; i < upperBoundOuter; i += incrementOuter) {
       for (let j = lowerBoundInner; j < upperBoundInner; j += incrementInner) {
-        ++index;
+        ++count;
       }
     }
-  } while (index > 7);
+  } while (count > 7);
 
-  console.log("button states, right answer", lq.buttonStates, index);
-  lq.buttonStates[0][index] = 1;
+  console.log("button states, right answer", lq.buttonStates, count);
+  lq.buttonStates[0][count] = 1;
 
   return lq;
 }
